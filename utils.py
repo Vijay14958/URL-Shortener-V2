@@ -18,7 +18,7 @@ from random_user_agent.params import SoftwareName, OperatingSystem
 
 from config import *
 from database import db
-import PyBypass as bypasser
+import PyBypass as bypass
 
 logger = logging.getLogger(__name__)
 logger.setLevel(logging.ERROR)
