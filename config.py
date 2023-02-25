@@ -52,7 +52,7 @@ HEROKU = bool(HEROKU_API_KEY and HEROKU_APP_NAME)
 #  Replit Config for Hosting in Replit
 REPLIT_USERNAME = os.environ.get("REPLIT_USERNAME", None)  # your replit username
 REPLIT_APP_NAME = os.environ.get("REPLIT_APP_NAME", None)  # your replit app name
-REPLIT = (f"https://{REPLIT_APP_NAME.lower()}.{REPLIT_USERNAME}.repl.co"if REPLIT_APP_NAME and REPLIT_USERNAMEelse False)
+REPLIT = (f"https://{REPLIT_APP_NAME.lower()}.{REPLIT_USERNAME}.repl.co"if REPLIT_APP_NAME and REPLIT_USERNAME else False)
 
 #  Koyeb Config for Hosting in Koyeb
 KOYEB_USERNAME = os.environ.get("KOYEB_USERNAME", None)  # your koyeb username
