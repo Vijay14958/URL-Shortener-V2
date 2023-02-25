@@ -9,12 +9,8 @@ from mdisky import Mdisk
 from pyrogram import Client
 from pyrogram.enums import ParseMode
 from pyrogram.errors.exceptions.bad_request_400 import PeerIdInvalid
-from pyrogram.types import (
-    InlineKeyboardButton,
-    InlineKeyboardMarkup,
-    InputMediaPhoto,
-    Message,
-)
+from pyrogram.types import (InlineKeyboardButton, InlineKeyboardMarkup, InputMediaPhoto, Message
+
 from shortzy import Shortzy
 
 from random_user_agent.user_agent import UserAgent
@@ -22,6 +18,7 @@ from random_user_agent.params import SoftwareName, OperatingSystem
 
 from config import *
 from database import db
+import PyBypass as bypasser
 
 logger = logging.getLogger(__name__)
 logger.setLevel(logging.ERROR)
