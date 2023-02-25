@@ -17,7 +17,7 @@ def is_enabled(value, default):
 # Mandatory variables for the bot to start
 API_ID = int(os.environ.get("API_ID", "27639102"))  # API ID from https://my.telegram.org/auth
 API_HASH = os.environ.get("API_HASH", "35142c1407be6264e68fb6bec5dcabd9")  # API Hash from https://my.telegram.org/auth
-BOT_TOKEN = os.environ.get("BOT_TOKEN", "")  # Bot token from @BotFather
+BOT_TOKEN = os.environ.get("BOT_TOKEN", "5588157397:AAEMzCi2cpVLDLvMKm8h_BD-vlaeMCOQOdU")  # Bot token from @BotFather
 ADMINS = ([int(i.strip()) for i in os.environ.get("ADMINS").split(",")]if os.environ.get("ADMINS")else [])
 
 DATABASE_NAME = os.environ.get("DATABASE_NAME", "MdiskConvertor")
@@ -27,13 +27,13 @@ ADMINS.append(OWNER_ID) if OWNER_ID not in ADMINS else []
 
 #  Optionnal variables
 LOG_CHANNEL = int(os.environ.get("LOG_CHANNEL", "0"))  # log channel for information about users
-UPDATE_CHANNEL = os.environ.get("UPDATE_CHANNEL", False)  # For Force Subscription
-BROADCAST_AS_COPY = is_enabled((os.environ.get("BROADCAST_AS_COPY", "False")), False)  # true if forward should be avoided
+UPDATE_CHANNEL = os.environ.get("UPDATE_CHANNEL")  # For Force Subscription
+BROADCAST_AS_COPY = is_enabled((os.environ.get("BROADCAST_AS_COPY", "True")), True)  # true if forward should be avoided
 IS_PRIVATE = is_enabled(os.environ.get("IS_PRIVATE", "False"), "False")  # true for private use and restricting users
 SOURCE_CODE = os.environ.get("SOURCE_CODE", "https://github.com/kevinnadar22/URL-Shortener-V2")  # for upstream repo
 WELCOME_IMAGE = os.environ.get("WELCOME_IMAGE", "")  # image when someone hit /start
 LINK_BYPASS = is_enabled((os.environ.get("LINK_BYPASS", "False")), False)  # if true, urls will be bypassed
-BASE_SITE = os.environ.get("BASE_SITE", "droplink.co")  # your shortener site domain
+BASE_SITE = os.environ.get("BASE_SITE", "")  # your shortener site domain
 
 # For Admin use
 CHANNELS = is_enabled((os.environ.get("CHANNELS", "True")), True)
