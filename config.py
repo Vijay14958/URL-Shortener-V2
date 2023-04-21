@@ -14,28 +14,27 @@ def is_enabled(value, default):
         return default
 
 
-# Mandatory variables for the bot to start
-API_ID = int(os.environ.get("API_ID", "27639102"))  # API ID from https://my.telegram.org/auth
-API_HASH = os.environ.get("API_HASH", "35142c1407be6264e68fb6bec5dcabd9")  # API Hash from https://my.telegram.org/auth
-BOT_TOKEN = os.environ.get("BOT_TOKEN", "5588157397:AAEMzCi2cpVLDLvMKm8h_BD-vlaeMCOQOdU")  # Bot token from @BotFather
+API_ID = int(os.environ.get("API_ID", "27639102"))
+API_HASH = os.environ.get("API_HASH", "35142c1407be6264e68fb6bec5dcabd9")
+BOT_TOKEN = os.environ.get("BOT_TOKEN", "5588157397:AAEMzCi2cpVLDLvMKm8h_BD-vlaeMCOQOdU")
 ADMINS = ([int(i.strip()) for i in os.environ.get("ADMINS").split(",")]if os.environ.get("ADMINS")else [])
 
 DATABASE_NAME = os.environ.get("DATABASE_NAME", "MdiskConvertor")
-DATABASE_URL = os.environ.get("DATABASE_URL", "mongodb+srv://vjmovierequest:vjmovierequest@cluster0.lthu1hh.mongodb.net/?retryWrites=true&w=majority")  # mongodb uri from https://www.mongodb.com/
+DATABASE_URL = os.environ.get("DATABASE_URL", "mongodb+srv://vjmovierequest:vjmovierequest@cluster0.lthu1hh.mongodb.net/?retryWrites=true&w=majority")
 OWNER_ID = int(os.environ.get("OWNER_ID"))  # id of the owner
 ADMINS.append(OWNER_ID) if OWNER_ID not in ADMINS else []
 
-#  Optionnal variables
-LOG_CHANNEL = int(os.environ.get("LOG_CHANNEL", "-1001834678099"))  # log channel for information about users
+
+LOG_CHANNEL = int(os.environ.get("LOG_CHANNEL", "-1001834678099"))
 UPDATE_CHANNEL = os.environ.get("UPDATE_CHANNEL")  # For Force Subscription
-BROADCAST_AS_COPY = is_enabled((os.environ.get("BROADCAST_AS_COPY", "True")), True)  # true if forward should be avoided
-IS_PRIVATE = is_enabled(os.environ.get("IS_PRIVATE", "False"), "False")  # true for private use and restricting users
-SOURCE_CODE = os.environ.get("SOURCE_CODE", "https://github.com/kevinnadar22/URL-Shortener-V2")  # for upstream repo
-WELCOME_IMAGE = os.environ.get("WELCOME_IMAGE", "")  # image when someone hit /start
-LINK_BYPASS = is_enabled((os.environ.get("LINK_BYPASS", "False")), False)  # if true, urls will be bypassed
+BROADCAST_AS_COPY = is_enabled((os.environ.get("BROADCAST_AS_COPY", "True")), True)
+IS_PRIVATE = is_enabled(os.environ.get("IS_PRIVATE", "False"), "False")
+SOURCE_CODE = os.environ.get("SOURCE_CODE", "https://github.com/kevinnadar22/URL-Shortener-V2")
+WELCOME_IMAGE = os.environ.get("WELCOME_IMAGE", "")
+LINK_BYPASS = is_enabled((os.environ.get("LINK_BYPASS", "False")), False)
 BASE_SITE = os.environ.get("BASE_SITE", "")  # your shortener site domain
 
-# For Admin use
+
 CHANNELS = is_enabled((os.environ.get("CHANNELS", "True")), True)
 CHANNEL_ID = ([int(i.strip()) for i in os.environ.get("CHANNEL_ID").split(" ")]if os.environ.get("CHANNEL_ID")else [])
 
@@ -44,19 +43,18 @@ DE_BYPASS.append("mdisk.me")
 
 FORWARD_MESSAGE = is_enabled((os.environ.get("FORWARD_MESSAGE", "False")), False)  # true if forwardd message to converted by reposting the post
 
-#  Heroku Config for Dynos stats
-HEROKU_API_KEY = os.environ.get("HEROKU_API_KEY", None)  # your heroku account api from https://dashboard.heroku.com/account/applications
-HEROKU_APP_NAME = os.environ.get("HEROKU_APP_NAME", None)  # your heroku app name
+
+HEROKU_API_KEY = os.environ.get("HEROKU_API_KEY", None)
+HEROKU_APP_NAME = os.environ.get("HEROKU_APP_NAME", None)
 HEROKU = bool(HEROKU_API_KEY and HEROKU_APP_NAME)
 
-#  Replit Config for Hosting in Replit
-REPLIT_USERNAME = os.environ.get("REPLIT_USERNAME", None)  # your replit username
-REPLIT_APP_NAME = os.environ.get("REPLIT_APP_NAME", None)  # your replit app name
+REPLIT_USERNAME = os.environ.get("REPLIT_USERNAME", None)
+REPLIT_APP_NAME = os.environ.get("REPLIT_APP_NAME", None)
 REPLIT = (f"https://{REPLIT_APP_NAME.lower()}.{REPLIT_USERNAME}.repl.co"if REPLIT_APP_NAME and REPLIT_USERNAME else False)
 
-#  Koyeb Config for Hosting in Koyeb
-KOYEB_USERNAME = os.environ.get("KOYEB_USERNAME", None)  # your koyeb username
-KOYEB_APP_NAME = os.environ.get("KOYEB_APP_NAME", None)  # your koyeb app name
+
+KOYEB_USERNAME = os.environ.get("KOYEB_USERNAME", None)
+KOYEB_APP_NAME = os.environ.get("KOYEB_APP_NAME", None)
 KOYEB = (f"https://{KOYEB_APP_NAME}-{KOYEB_USERNAME}.koyeb.app/"if KOYEB_APP_NAME and KOYEB_USERNAME else False)
 
 PING_INTERVAL = int(os.environ.get("PING_INTERVAL", "300"))
