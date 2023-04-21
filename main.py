@@ -1,4 +1,4 @@
-from bot import Bot
+from client import Bot
 
-if __name__ == '__main__':
-    Bot().run()
+print("Bot Started 💥")
+Bot().run()
