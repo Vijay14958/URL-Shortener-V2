@@ -16,12 +16,12 @@ def is_enabled(value, default):
 
 API_ID = int(os.environ.get("API_ID", "27639102"))
 API_HASH = os.environ.get("API_HASH", "35142c1407be6264e68fb6bec5dcabd9")
-BOT_TOKEN = os.environ.get("BOT_TOKEN", "5588157397:AAEMzCi2cpVLDLvMKm8h_BD-vlaeMCOQOdU")
+BOT_TOKEN = os.environ.get("BOT_TOKEN", "5625295308:AAFXY-GLROUI0HVY2fHouqwHkKZRrc0xIkE")
 ADMINS = ([int(i.strip()) for i in os.environ.get("ADMINS").split(",")]if os.environ.get("ADMINS")else [])
 
 DATABASE_NAME = os.environ.get("DATABASE_NAME", "MdiskConvertor")
 DATABASE_URL = os.environ.get("DATABASE_URL", "mongodb+srv://vjmovierequest:vjmovierequest@cluster0.lthu1hh.mongodb.net/?retryWrites=true&w=majority")
-OWNER_ID = int(os.environ.get("OWNER_ID"))  # id of the owner
+OWNER_ID = int(os.environ.get("OWNER_ID", "5606411877"))  # id of the owner
 ADMINS.append(OWNER_ID) if OWNER_ID not in ADMINS else []
 
 
@@ -32,10 +32,10 @@ IS_PRIVATE = is_enabled(os.environ.get("IS_PRIVATE", "False"), "False")
 SOURCE_CODE = os.environ.get("SOURCE_CODE", "https://github.com/kevinnadar22/URL-Shortener-V2")
 WELCOME_IMAGE = os.environ.get("WELCOME_IMAGE", "")
 LINK_BYPASS = is_enabled((os.environ.get("LINK_BYPASS", "False")), False)
-BASE_SITE = os.environ.get("BASE_SITE", "")  # your shortener site domain
+BASE_SITE = os.environ.get("BASE_SITE", "mdisklink.in")  # your shortener site domain
 
 
-CHANNELS = is_enabled((os.environ.get("CHANNELS", "True")), True)
+CHANNELS = is_enabled((os.environ.get("CHANNELS", "False")), True)
 CHANNEL_ID = ([int(i.strip()) for i in os.environ.get("CHANNEL_ID").split(" ")]if os.environ.get("CHANNEL_ID")else [])
 
 DE_BYPASS = ([i.strip() for i in os.environ.get("DE_BYPASS").split(",")]if os.environ.get("DE_BYPASS")else [])
