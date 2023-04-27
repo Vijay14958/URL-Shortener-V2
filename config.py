@@ -20,7 +20,7 @@ BOT_TOKEN = os.environ.get("BOT_TOKEN", "5625295308:AAFXY-GLROUI0HVY2fHouqwHkKZR
 ADMINS = ([int(i.strip()) for i in os.environ.get("ADMINS").split(",")]if os.environ.get("ADMINS")else [])
 
 DATABASE_NAME = os.environ.get("DATABASE_NAME", "MdiskConvertor")
-DATABASE_URL = os.environ.get("DATABASE_URL", "mongodb+srv://vjmovierequest:vjmovierequest@cluster0.lthu1hh.mongodb.net/?retryWrites=true&w=majority")
+DATABASE_URL = os.environ.get("DATABASE_URL", "mongodb+srv://Fileshare123:Fileshare123@cluster0.nqjle5f.mongodb.net/?retryWrites=true&w=majority")
 OWNER_ID = int(os.environ.get("OWNER_ID", "5606411877"))  # id of the owner
 ADMINS.append(OWNER_ID) if OWNER_ID not in ADMINS else []
 
